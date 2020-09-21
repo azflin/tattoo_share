@@ -1,1 +1,4 @@
 .idea/
+.DS_Store
+tattoo_share/.DS_Store
+tattoo_share/media/tattoos/*
