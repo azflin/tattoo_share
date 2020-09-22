@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Tattoo } from "../tattoo";
 
 @Component({
   selector: 'app-tattoos',
@@ -6,8 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./tattoos.component.css']
 })
 export class TattoosComponent implements OnInit {
-
-  description = "Raijin sleeve";
+  tattoo: Tattoo = {
+    id: 1,
+    description: 'Raijin sleeve',
+    photo: 'http://127.0.0.1:8000/media/tattoos/raijin_sleeve.jpg'
+  }
 
   constructor() { }
 
