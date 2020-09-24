@@ -1,7 +1,11 @@
-<h2>id: {{tattoo.id}}</h2>
-<div><span>Description: {{tattoo.description}}</span></div>
-<div>
-  <span>
-    <img src="{{tattoo.photo}}" alt="{{tattoo.description}}" width="500" height="600">
-  </span>
-</div>
+<h2>Tattoos</h2>
+<ul>
+  <li *ngFor="let tattoo of tattoos">
+    <div>ID {{tattoo.id}}: {{tattoo.description}}</div>
+    <div>
+      <a routerLink="/tattoos/{{tattoo.id}}">
+        <img src="{{tattoo.photo}}" alt="{{tattoo.description}}">
+      </a>
+    </div>
+  </li>
+</ul>
