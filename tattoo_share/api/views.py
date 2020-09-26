@@ -1,21 +1,16 @@
 from django.http import HttpResponse
-from django.shortcuts import render, redirect
-from api.forms import TattooForm
+from django.core import serializers
+
+from api.models import Tattoo
 
 
-def upload_tattoo(request):
-
-    if request.method == 'POST':
-        form = TattooForm(request.POST, request.FILES)
-
-        if form.is_valid():
-            form.save()
-            return redirect('success')
-    else:
-        form = TattooForm()
-    return render(request, 'tattoo_upload.html', {'form': form})
+def get_tattoo(request, tattoo_id):
+    tattoo = Tattoo.objects.get(pk=tattoo_id)
+    tattoo_json = serializers.serialize("json", [tattoo])[1:-1]
+    return HttpResponse(tattoo_json, content_type='application/json')
 
 
-def success(request):
-    return HttpResponse('successfully uploaded')
-
+def get_tattoos(request):
+    tattoos = Tattoo.objects.all()
+    tattoos_json = serializers.serialize("json", tattoos)
+    return HttpResponse(tattoos_json, content_type='application/json')
