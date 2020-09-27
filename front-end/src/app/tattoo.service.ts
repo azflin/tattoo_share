@@ -15,7 +15,9 @@ export class TattooService {
     private http: HttpClient
   ) { }
 
-  getTattoos() { }
+  getTattoos(): Observable<Tattoo[]> {
+    return this.http.get<Tattoo[]>(this.tattoosUrl);
+  }
 
   getTattoo(id: number): Observable<Tattoo> {
     return this.http.get<Tattoo>(`${this.tattoosUrl}/${id}`);
