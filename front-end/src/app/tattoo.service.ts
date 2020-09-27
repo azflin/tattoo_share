@@ -9,7 +9,7 @@ import { Tattoo } from "./tattoo";
 })
 export class TattooService {
 
-  private tattoosUrl = 'http://127.0.0.1:8000/api/tattoos';
+  private tattoosUrl = 'api/tattoos';
 
   constructor(
     private http: HttpClient

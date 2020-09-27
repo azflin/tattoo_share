@@ -1,1 +1,8 @@
-<p>tattoo-detail works!</p>
+<h2>Tattoo Detail</h2>
+<div *ngIf="tattoo">
+  <p>{{ tattoo.id }}</p>
+  <p>{{ tattoo.description }}</p>
+  <p>{{ tattoo.photo }}</p>
+  <!-- TODO: Remove this hardcoded URL -->
+  <img src="http://127.0.0.1:8000{{tattoo.photo}}" >
+</div>

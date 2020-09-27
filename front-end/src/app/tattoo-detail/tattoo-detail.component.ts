@@ -25,7 +25,7 @@ export class TattooDetailComponent implements OnInit {
   getTattoo(): void {
     const id = +this.route.snapshot.paramMap.get('id');
     this.tattooService.getTattoo(id)
-      .subscribe((tattoo: Tattoo) => this.tattoo = { ...tattoo });
+      .subscribe((tattoo: Tattoo) => this.tattoo = tattoo);
   }
 
 }
