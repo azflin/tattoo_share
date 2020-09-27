@@ -1,16 +1,22 @@
-from django.http import HttpResponse
-from django.core import serializers
+from django.http import JsonResponse
 
 from api.models import Tattoo
 
 
 def get_tattoo(request, tattoo_id):
     tattoo = Tattoo.objects.get(pk=tattoo_id)
-    tattoo_json = serializers.serialize("json", [tattoo])[1:-1]
-    return HttpResponse(tattoo_json, content_type='application/json')
+    return JsonResponse(
+        {"id": tattoo.id, "description": tattoo.description, "photo": tattoo.photo.url}
+    )
 
 
 def get_tattoos(request):
     tattoos = Tattoo.objects.all()
-    tattoos_json = serializers.serialize("json", tattoos)
-    return HttpResponse(tattoos_json, content_type='application/json')
+    tattoos = [
+        {
+            "id": tattoo.id,
+            "description": tattoo.description,
+            "photo": tattoo.photo.url
+        } for tattoo in tattoos
+    ]
+    return JsonResponse(tattoos, safe=False)
