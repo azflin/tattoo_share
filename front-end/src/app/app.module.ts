@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { TattoosComponent } from './tattoos/tattoos.component';
 import { TattooDetailComponent } from './tattoo-detail/tattoo-detail.component';
 import { AppRoutingModule } from './app-routing.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { AppRoutingModule } from './app-routing.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
