@@ -1,11 +1,6 @@
-<h2>Tattoos</h2>
-<ul>
-  <li *ngFor="let tattoo of tattoos">
-    <div>ID {{tattoo.id}}: {{tattoo.description}}</div>
-    <div>
-      <a routerLink="/tattoos/{{tattoo.id}}">
-        <img src="http://127.0.0.1:8000{{tattoo.photo}}" alt="{{tattoo.description}}">
-      </a>
-    </div>
-  </li>
-</ul>
+<div class="tattoos-component">
+  <mat-card *ngFor="let tattoo of tattoos">
+    <img mat-card-image src="http://127.0.0.1:8000{{tattoo.photo}}"
+         alt="{{tattoo.description}}">
+  </mat-card>
+</div>

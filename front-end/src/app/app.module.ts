@@ -8,6 +8,7 @@ import { TattoosComponent } from './tattoos/tattoos.component';
 import { TattooDetailComponent } from './tattoo-detail/tattoo-detail.component';
 import { AppRoutingModule } from './app-routing.module';
 import { MaterialModule } from './material.module';
+import {MatCardModule} from "@angular/material/card";
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { MaterialModule } from './material.module';
     AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
