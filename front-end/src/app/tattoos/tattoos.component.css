@@ -1,7 +1,8 @@
-mat-card {
-  max-width: 400px;
+.tattoos-component {
+  margin: auto;
+  width: 80%;
 }
 
-.tattoos-component {
-  margin-top: 64px;
+mat-grid-list {
+  margin-top: 80px;
 }

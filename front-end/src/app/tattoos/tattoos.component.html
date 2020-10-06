@@ -1,6 +1,10 @@
 <div class="tattoos-component">
-  <mat-card *ngFor="let tattoo of tattoos">
-    <img mat-card-image src="http://127.0.0.1:8000{{tattoo.photo}}"
-         alt="{{tattoo.description}}">
-  </mat-card>
+  <mat-grid-list cols="3" rowHeight="1:1" gutterSize="15px">
+    <mat-grid-tile *ngFor="let tattoo of tattoos">
+      <mat-card>
+        <img src="http://127.0.0.1:8000{{tattoo.photo}}"
+             alt="{{tattoo.description}}">
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
 </div>
