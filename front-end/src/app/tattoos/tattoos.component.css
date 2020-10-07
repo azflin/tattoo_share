@@ -6,3 +6,11 @@
 mat-grid-list {
   margin-top: 80px;
 }
+
+.tattoo-image {
+  cursor: pointer;
+}
+
+.tattoo-image:hover {
+  opacity: 0.6;
+}

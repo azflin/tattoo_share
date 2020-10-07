@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from "@angular/material/dialog";
 
 import { Tattoo } from "../tattoo";
 import { TattooService } from "../tattoo.service";
@@ -11,7 +12,10 @@ import { TattooService } from "../tattoo.service";
 export class TattoosComponent implements OnInit {
   tattoos: Tattoo[];
 
-  constructor(private tattooService: TattooService) { }
+  constructor(
+    private tattooService: TattooService,
+    private dialog: MatDialog
+  ) { }
 
   ngOnInit(): void {
     this.getTattoos();
@@ -22,4 +26,13 @@ export class TattoosComponent implements OnInit {
       .subscribe(tattoos => this.tattoos = tattoos);
   }
 
+  onClickMe() {
+    this.dialog.open(TattooModalComponent);
+  }
 }
+
+@Component({
+  selector: 'app-tattoo-modal',
+  templateUrl: 'app-tattoo-modal.html'
+})
+export class TattooModalComponent {}
