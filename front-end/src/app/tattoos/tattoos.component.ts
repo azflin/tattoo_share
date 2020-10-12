@@ -33,7 +33,8 @@ export class TattoosComponent implements OnInit {
 
 @Component({
   selector: 'app-tattoo-modal',
-  templateUrl: 'app-tattoo-modal.html'
+  templateUrl: 'app-tattoo-modal.html',
+  styleUrls: ['./tattoos.component.css']
 })
 export class TattooModalComponent {
   constructor(@Inject(MAT_DIALOG_DATA) public data: Tattoo) { }
