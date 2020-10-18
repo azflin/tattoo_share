@@ -27,7 +27,11 @@ export class TattoosComponent implements OnInit {
   }
 
   openTattooModal(tattoo: Tattoo): void {
-    this.dialog.open(TattooModalComponent, {data: tattoo});
+    this.dialog.open(TattooModalComponent,
+      {
+        data: tattoo,
+        height: '90vh'
+      });
   }
 }
 
