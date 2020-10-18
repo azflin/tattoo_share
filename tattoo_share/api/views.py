@@ -16,7 +16,8 @@ def get_tattoos(request):
         {
             "id": tattoo.id,
             "description": tattoo.description,
-            "photo": tattoo.photo.url
+            "photo": tattoo.photo.url,
+            "artist": tattoo.artist
         } for tattoo in tattoos
     ]
     return JsonResponse(tattoos, safe=False)
