@@ -15,6 +15,11 @@ mat-grid-list {
   opacity: 0.6;
 }
 
-.tattoo-modal {
+.tattoo-modal-image {
+  max-height: 80vh;
+  width: auto;
+}
 
+.tattoo-modal-text {
+  margin-left: 15px;
 }

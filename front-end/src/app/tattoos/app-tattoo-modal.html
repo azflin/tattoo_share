@@ -1,9 +1,9 @@
 <div fxLayout="row">
-  <div fxFill fxFlex="75%">
-    <img style="max-width: 100%; height: auto" src="http://127.0.0.1:8000{{ data.photo }}">
+  <div>
+    <img class="tattoo-modal-image" src="http://127.0.0.1:8000{{ data.photo }}">
   </div>
-  <div fxFill fxFlex="25%">
-    <div>Description: {{ data.description }}</div>
-    <div>Artist: {{ data.artist }}</div>
+  <div class="tattoo-modal-text">
+    <p><strong>Description</strong>: {{ data.description }}</p>
+    <p><strong>Artist</strong>: {{ data.artist }}</p>
   </div>
 </div>
